@@ -1,0 +1,24 @@
+# safelist
+language: node_js
+node_js:
+  - 10
+
+branches:
+  only:
+    - master
+    - develop
+
+sudo: required
+services:
+  - docker
+
+before_script:
+  - npm run docker:build
+
+script:
+  - npm run integrationtest
+
+after_success:
+  - docker build -t minhhh/otp-gen .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push minhhh/otp-gen
