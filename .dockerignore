@@ -1,0 +1,14 @@
+.dockerignore
+.git
+.gitignore
+.cache
+.Trash*
+node_modules
+npm-debug.log
+Dockerfile*
+docker-compose*
+README.md
+LICENSE
+.vscode
+venv
+

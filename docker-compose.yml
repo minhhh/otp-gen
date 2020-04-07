@@ -1,0 +1,20 @@
+version: '3'
+services:
+  dev:
+    image: node:10-alpine
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    command: /bin/sh -c "yarn install && npm run watch"
+    environment:
+      - DEBUG=*
+  tests:
+    image: node:10-alpine
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    command: /bin/sh -c "yarn install && npm run watch:test"
+    environment:
+      - DEBUG=*
