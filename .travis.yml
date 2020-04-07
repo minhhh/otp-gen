@@ -1,16 +1,15 @@
-# safelist
+dist: xenial
 language: node_js
 node_js:
   - 10
+services:
+  - docker
 
+# safelist
 branches:
   only:
     - master
     - develop
-
-sudo: required
-services:
-  - docker
 
 before_script:
   - npm run docker:build

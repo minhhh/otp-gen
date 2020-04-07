@@ -4,6 +4,7 @@
   "description": "Command line One Time Password (OTP) generator",
   "main": "index.js",
   "scripts": {
+    "cm": "npx git-cz",
     "info": "npm-scripts-info",
     "build": "run-s clean && run-p build:*",
     "build:main": "tsc -p tsconfig.build.json",
@@ -76,5 +77,10 @@
     "otplib": "^12.0.1",
     "typescript": "^3.8.3",
     "yargs": "^15.3.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
